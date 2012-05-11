@@ -21,20 +21,21 @@ function convertSearchedTweets(searchs) {
     var username = searchs["results"][i].from_user;
     var id = searchs["results"][i].id;
     var profile_image_url = searchs["results"][i].profile_image_url;
-    var reltime = relative_time(searchs["results"][i].created_at);
     var status = searchs["results"][i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
       return '<a href="'+url+'">'+url+'</a>';
     }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
       return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
     });
 	var time_raw = searchs["results"][i].created_at;
-	var time_arr = time_raw.match(/([a-zA-Z]+),\s([0-9]+)\s([a-zA-Z]+)\s([0-9]+)\s([0-9]+):([0-9]+):([0-9]+)\s/);
-	var time = new Date(time_arr[3], time_arr[2],time_arr[1]);
-    s+='<li>';
+	var time_arr = time_raw.match(/([a-zA-Z]+),\s([0-9]+)\s([a-zA-Z]+)\s([0-9]+)\s([0-9:]+)\s/);
+	var time_formed = time_arr[3] + " " + time_arr[2] + ", " + time_arr[4] + " " + time_arr[5];
+	var time = new Date( time_formed );
+	time = new Date(Date.UTC(time.getFullYear(),time.getMonth()+1,time.getDate(),time.getHours(),time.getMinutes(), time.getSeconds() ));
+	s+='<li>';
 	s+=	'<img src=" ' + profile_image_url+ '" width=48 height=48>';
 	s+=	'<a href="http://twitter.com/' +username+ '">' +username+ '</a>:';
-	s+=	'<span>' +status + " Post at " + time.getMonth() + '</span>';
-	s+=	'<a style="font-size:85%" href="http://twitter.com/' +username+ '/statuses/' +id+ '">' +reltime+ '</a>';
+	s+=	'<span>' +status + " Post at " + form_date(time) + '</span>';
+	//s+=	'<a style="font-size:85%" href="http://twitter.com/' +username+ '/statuses/' +id+ '">' + reltime+ '</a>';
 	s+=	'</li>';
 	/* Imageオブジェクトを生成 */
 	imgs.push(new Image());
@@ -48,6 +49,13 @@ function convertSearchedTweets(searchs) {
 	//ctx.drawImage(img, 0, 0,img.width,img.height,0,0);
   }
   return s;
+}
+
+function form_date(date) {
+	var d = date.getDate();
+	if(d<10)
+		d = "0"+d;
+	return ( date.getFullYear() + "/" + (date.getMonth()+1) +"/" + d + " " + date.getHours() + ":" +date.getMinutes()+ ":" +date.getSeconds() );
 }
 
 //Fri, 11 May 2012 06:11:52 +0000
