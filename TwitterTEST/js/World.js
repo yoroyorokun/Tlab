@@ -28,7 +28,10 @@ var World = function( canvas ) {/*{{{*/
 		var api_url = "http://search.twitter.com/search.json?q="
 									+encodeURIComponent(search_word)+"&rpp="+count+"&callback="+callback_func;
 		callJSONP(api_url);
-		timerID = setInterval(function(){ callJSONP(api_url) },update_time*1000);
+
+	// デバッグ用に一度のみ取得
+//		timerID = setInterval(function(){ callJSONP(api_url) },update_time*1000);
+
 	}/*}}}*/
 
 	this.formatedTweets = function(searches){/*{{{*/

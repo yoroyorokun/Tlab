@@ -29,17 +29,45 @@ var Tweet = function(date) {/*{{{*/
 		this.img_load_done = false;
 		this.img.onload = this.loadDone(this);
 		this.draw_state = 0;
+
+		this.pos = new Position( Math.random() , Math.random() );
+		this.screenpos = this.pos.fitScreen();
+
+		this.anime = new Animation(0);
 	}else{ return null; };
 	
 	
 	
-	this.step = function(){};
+	this.step = function(){
+		this.anime.step(this);
+
+//		this.pos.x += 0.001;
+//		if (this.pos.x > 1)
+//			this.pos.x = 0;
+		this.screenPos = this.pos.fitScreen();
+
+	};
 
 	this.draw = function(ctx){
-		if(this.img_load_done == true ){
-			ctx.drawImage(this.img, Math.floor( Math.random() * 540 ),Math.floor( Math.random() * 380 ));
-		}
+//		if(this.img_load_done == true ){
+//			ctx.drawImage(this.img, Math.floor( Math.random() * 540 ),Math.floor( Math.random() * 380 ));
+//		}
+		this.anime.draw(ctx,this);
+//		ctx.drawImage(this.img, this.screenPos.x , this.screenPos.y );
 	};
 
 }/*}}}*/
 
+var Position = function(x,y){
+
+	this.x = x;
+	this.y = y;
+
+	this.setPos = function(x,y){	this.x = x;	this.y = y;	}	
+	this.setX = function(x){ this.x = x;}
+	this.setY = function(y){ this.y = y;}
+
+	this.fitScreen = function(){
+		return new Position(this.x * SCREENWIDTH , this.y * SCREENHEIGHT);
+	}
+}
