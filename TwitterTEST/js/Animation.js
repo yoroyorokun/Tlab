@@ -12,10 +12,11 @@ var Animation = function(kind){
 	this.waitTime = Math.floor( Math.random() * this.maxChangeTime );
 	if(this.speed == 0)
 		this.kind = ANIME_CLASS.SLEEP;
+	this.lifeTime = Math.floor( Math.random() * 10) * 100 + 1000;
 
 	this.step = function(tweet){
 		
-		if(this.kind != ANIME_CLASS.SLEEP){
+		if(this.kind != ANIME_CLASS.SLEEP && this.lifeTime > 50){
 			tweet.pos.x += this.speed * Math.cos(this.angle) ;
 			tweet.pos.y += this.speed * Math.sin(this.angle) ;
 		};
@@ -37,10 +38,12 @@ var Animation = function(kind){
 			this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
 		}
 		
+		this.lifeTime--;
 	}
 
 	this.draw = function(ctx,tweet){
 	
+		if ( this.lifeTime > 50){
 		ctx.save();
 		ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
 		
@@ -75,6 +78,51 @@ var Animation = function(kind){
 				,250,250);
 		ctx.restore();
 		//ctx.drawImage(tweet.img, tweet.screenPos.x-25, tweet.screenPos.y-25,50,50);
+		}else if (this.lifeTime > 0){
+			ctx.save();
+			ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
+				
+			ctx.beginPath();
+			ctx.moveTo(tweet.screenPos.x-125, tweet.screenPos.y-125);
+			ctx.lineTo(tweet.screenPos.x+125, tweet.screenPos.y-125);
+			ctx.lineTo(tweet.screenPos.x+125, tweet.screenPos.y+125);
+			ctx.lineTo(tweet.screenPos.x-125, tweet.screenPos.y+125);
+			ctx.clip();
+			
+			ctx.translate(0, (50 - this.lifeTime) * 250 / 50 / 2 );
+			
+			ctx.drawImage(tweet.img, tweet.screenPos.x-25, tweet.screenPos.y-25,50,50);
+			
+			if ( this.angle < Math.PI/2 || this.angle > Math.PI*3/2 )
+				ctx.transform(-1,0,0,1,tweet.screenPos.x+125, tweet.screenPos.y-125);
+			else
+				ctx.transform(1,0,0,1,tweet.screenPos.x-125, tweet.screenPos.y-125);
+
+			ctx.save();
+			ctx.translate(100,100);
+			ctx.drawImage(tweet.img, 0,0);
+			ctx.restore();
+		
+			ctx.save();
+//			ctx.translate(0,this.lifeTime * 250 / 50);
+			ctx.transform(1,0,0,0.2,125, (this.lifeTime * 250 / 50 / 2) + 250/2 - 250*0.05 ); //250 );
+			ctx.beginPath();
+			ctx.arc(0,0,250/4,0,Math.PI*2 , false);
+			ctx.fillStyle="black";
+			ctx.fill();
+			ctx.restore();
+		
+			ctx.drawImage(ANIME_IMAGE,
+				Math.floor(this.sec / 10) * 500 ,this.kind * 500,
+				500,500,
+				0, 0
+				,250,250);
+			ctx.restore();
+			
+			
+			
+
+		};
 	}
 
 }

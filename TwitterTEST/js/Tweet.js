@@ -55,6 +55,13 @@ var Tweet = function(date) {/*{{{*/
 		this.anime.draw(ctx,this);
 //		ctx.drawImage(this.img, this.screenPos.x , this.screenPos.y );
 	};
+	
+	this.death = function(){
+		if ( this.anime.lifeTime < 0 ) 
+			return true;
+		else
+			return false;
+	}
 
 }/*}}}*/
 

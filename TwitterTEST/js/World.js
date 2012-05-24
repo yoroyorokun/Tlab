@@ -6,6 +6,19 @@ var World = function( canvas ) {/*{{{*/
 		for(var i in this.tweetList){
 			world.tweetList[i].step();
 		}
+		
+		//var deaths = new Array;
+		// lifeTimeが０のものを削除
+		for(var i in this.tweetList){
+			if ( world.tweetList[i].death() ){
+				world.tweetList.splice(i,1);
+				// おそらく一気にやるとズレるので一回飛ばす
+				// 描画自体は消えているので１フレームずれても問題なし
+				break;
+			}
+		}
+		
+		
 	};/*}}}*/
 	
 	this.draw = function(){/*{{{*/
