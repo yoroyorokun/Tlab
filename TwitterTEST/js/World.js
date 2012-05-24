@@ -9,7 +9,11 @@ var World = function( canvas ) {/*{{{*/
 	};/*}}}*/
 	
 	this.draw = function(){/*{{{*/
-		this.ctx.clearRect(0,0,640,480);
+		this.ctx.clearRect(0,0,SCREENWIDTH,SCREENHEIGHT);
+		
+		//this.ctx.beginPath();
+		
+		//this.ctx.closePath();
 		
 		for(var i in this.tweetList){
 			world.tweetList[i].draw(world.ctx);
@@ -88,6 +92,15 @@ var World = function( canvas ) {/*{{{*/
 	this.tweetList = new Array;
 	this.updateLoop("#nicovideo", 30);
 	
+	// マウス位置の取得
+	this.canvas.onmousemove = function(e){
+		var rect = e.target.getBoundingClientRect();
+		MOUSE.x = e.clientX - rect.left;
+		MOUSE.y = e.clientY - rect.top;
+//		console.log(MOUSE.x + "," + MOUSE.y);
+		WORLD_ZOOM_RATE = MOUSE.y / ( SCREENHEIGHT / 2);
+	}
+	
 }/*}}}*/
 
 function twitterSearchCallback(searches) {/*{{{*/
@@ -95,10 +108,10 @@ function twitterSearchCallback(searches) {/*{{{*/
 	world.createTweetList(searches)
 
 	// デバッグ用出力
-	//  var s = world.formatedTweets(searches);
-	//  var element = document.createElement();
-	//  element.innerHTML = s; 
-	//  document.getElementById("twitter_update_list").insertBefore(element);//innerHTML = "<ul>"+s+"</ul>";
+	  var s = world.formatedTweets(searches);
+	  var element = document.createElement();
+	  element.innerHTML = s; 
+	  document.getElementById("twitter_update_list").insertBefore(element);//innerHTML = "<ul>"+s+"</ul>";
 
 }/*}}}*/
 

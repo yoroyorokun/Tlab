@@ -33,7 +33,7 @@ var Tweet = function(date) {/*{{{*/
 		this.pos = new Position( Math.random() , Math.random() );
 		this.screenpos = this.pos.fitScreen();
 
-		this.anime = new Animation(0);
+		this.anime = new Animation( ANIME_CLASS.WALK );
 	}else{ return null; };
 	
 	
@@ -68,6 +68,8 @@ var Position = function(x,y){
 	this.setY = function(y){ this.y = y;}
 
 	this.fitScreen = function(){
-		return new Position(this.x * SCREENWIDTH , this.y * SCREENHEIGHT);
+		return new Position(this.x * SCREENWIDTH / WORLD_ZOOM_RATE , this.y * SCREENHEIGHT / WORLD_ZOOM_RATE );
 	}
+	
+	
 }
