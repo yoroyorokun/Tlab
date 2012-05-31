@@ -43,7 +43,8 @@ var Animation = function(kind){
 		
 		if(this.waitTime < 0 ){
 			this.waitTime= Math.floor( Math.random() * this.maxChangeTime );
-			this.kind = Math.floor( Math.random() * 3 );
+			//this.kind = Math.floor( Math.random() * 3 );
+			this.kind = Math.floor( Math.random() * 2 );
 			if( this.kind != ANIME_CLASS.HAITAI )
 				this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
 			else

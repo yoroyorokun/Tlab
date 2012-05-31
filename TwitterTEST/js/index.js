@@ -5,6 +5,7 @@ var SCREENHEIGHT = 240;
 
 var WORLD_ZOOM_RATE = 1.0;
 var WORLD_ZOOM_RATE_TO = 1.0;
+var WORLD_ZOOM_RATE_OLD = 1.0;
 
 var MOUSE = new Position(0,0)
 

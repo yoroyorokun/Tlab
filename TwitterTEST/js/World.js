@@ -20,11 +20,17 @@ var World = function( canvas ) {/*{{{*/
 		
 //		if(this.tweetList.length)
 		WORLD_ZOOM_RATE_TO = 1.0 - ( Math.floor(this.appearCount() / 5) * 0.1);
+		//WORLD_ZOOM_RATE_OLD
 		//console.log(this.appearCount() );
 		
 		if(WORLD_ZOOM_RATE_TO != WORLD_ZOOM_RATE){
-			WORLD_ZOOM_RATE = WORLD_ZOOM_RATE + ( WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE)*0.05;
-			if( Math.abs(WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE) < 0.02)
+			if(WORLD_ZOOM_RATE_TO > WORLD_ZOOM_RATE)
+				WORLD_ZOOM_RATE += 0.001;
+			else
+				WORLD_ZOOM_RATE -= 0.001;
+			//WORLD_ZOOM_RATE = WORLD_ZOOM_RATE + ( WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE)*0.05;
+			
+			if( Math.abs(WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE) < 0.01)
 				WORLD_ZOOM_RATE = WORLD_ZOOM_RATE_TO;
 		}
 		

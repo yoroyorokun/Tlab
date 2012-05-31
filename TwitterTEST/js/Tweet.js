@@ -32,7 +32,10 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 		this.pos = new Position( Math.random() , Math.random() );
 		this.screenpos = this.pos.fitScreen();
 
-		this.anime = new Animation( Math.floor(Math.random() * 3) );//ANIME_CLASS.WALK );
+		if( this.status.match(/歌ってみた/) == null )
+			this.anime = new Animation( Math.floor(Math.random() * 2) );//ANIME_CLASS.WALK );
+		else
+			this.anime = new Animation( ANIME_CLASS.HAITAI );
 		
 		// 登場までの待ち時間
 //		if( firstcall == -1) {
