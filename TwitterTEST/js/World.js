@@ -18,8 +18,26 @@ var World = function( canvas ) {/*{{{*/
 			}
 		}
 		
+//		if(this.tweetList.length)
+		WORLD_ZOOM_RATE_TO = 1.0 - ( Math.floor(this.appearCount() / 5) * 0.1);
+		//console.log(this.appearCount() );
+		
+		if(WORLD_ZOOM_RATE_TO != WORLD_ZOOM_RATE){
+			WORLD_ZOOM_RATE = WORLD_ZOOM_RATE + ( WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE)*0.05;
+			if( Math.abs(WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE) < 0.02)
+				WORLD_ZOOM_RATE = WORLD_ZOOM_RATE_TO;
+		}
 		
 	};/*}}}*/
+	
+	this.appearCount = function(){
+		var count=0
+		for( var i in this.tweetList){
+			if( world.tweetList[i].anime.appearWaitTime <= 0 && world.tweetList[i].anime.lifeTime > 0 )
+				count++;
+		}
+		return count;
+	}
 	
 	this.draw = function(){/*{{{*/
 		this.ctx.clearRect(0,0,SCREENWIDTH,SCREENHEIGHT);
@@ -40,14 +58,14 @@ var World = function( canvas ) {/*{{{*/
 
 
 	this.updateLoop = function(search_word, count) {/*{{{*/
-		var update_time = 2*60; // sec
+		var update_time = 60; // sec
 		var callback_func = "twitterSearchCallback";
 		var api_url = "http://search.twitter.com/search.json?q="
 									+encodeURIComponent(search_word)+"&rpp="+count+"&callback="+callback_func;
 		callJSONP(api_url);
 
 	// デバッグ用に一度のみ取得
-//		timerID = setInterval(function(){ callJSONP(api_url) },update_time*1000);
+		timerID = setInterval(function(){ callJSONP(api_url) },update_time*1000);
 
 	}/*}}}*/
 
@@ -91,13 +109,32 @@ var World = function( canvas ) {/*{{{*/
 	}/*}}}*/
 
 	this.createTweetList = function(searches){/*{{{*/
-		for(var i in searches["results"]){
-			var tweet = new Tweet(searches["results"][i]);
-			if(tweet != null)
-				world.tweetList.push(tweet);
+	
+		if(world.tweetList.length == 0 ){
+			console.log(searches["results"].length);
+			console.log("おそらく1回目コールバック");
+			//初回起動時(おそらく)
+			for(var i in searches["results"]){
+				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , -1 );
+				if(tweet != null)
+					world.tweetList.push(tweet);
 
-			//tweet is null -> 被りなので追加せず
+				//tweet is null -> 被りなので追加せず
+			}
+		}else{
+			console.log("おそらく二回目コールバック");
+			//二回目以降のコールバック
+			//searches["results"] = searches["results"].reverse();
+			for(var i in searches["results"]){
+				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , i );
+				if(tweet != null)
+					world.tweetList.push(tweet);
+
+				//tweet is null -> 被りなので追加せず
+			}
 		}
+		
+		
 	}/*}}}*/
 
 	this.canvas = canvas ; //document.getElementById('canvas');
@@ -111,7 +148,10 @@ var World = function( canvas ) {/*{{{*/
 		MOUSE.x = e.clientX - rect.left;
 		MOUSE.y = e.clientY - rect.top;
 //		console.log(MOUSE.x + "," + MOUSE.y);
-		WORLD_ZOOM_RATE = MOUSE.y / ( SCREENHEIGHT / 2);
+		
+		//WORLD_ZOOM_RATE = MOUSE.y / ( SCREENHEIGHT / 2);
+		
+		//console.log(WORLD_ZOOM_RATE);
 	}
 	
 }/*}}}*/

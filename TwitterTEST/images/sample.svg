@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.23663631"
-     inkscape:cx="1494.2025"
-     inkscape:cy="-182.42556"
+     inkscape:cx="1613.0325"
+     inkscape:cy="-420.88131"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,7 +34,9 @@
      inkscape:window-height="838"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -43,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -51,33 +53,12 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1;opacity:1"
-       id="rect2991-1"
-       width="498.63654"
-       height="498.63654"
-       x="-9.4128628"
-       y="946.07452"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       id="rect3766-7"
-       width="100"
-       height="100"
-       x="189.90538"
-       y="1145.3928"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
     <g
        id="g3207"
-       transform="translate(-10.275076,-108.12321)"
+       transform="translate(-10.274976,-309.89622)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          d="m 249.50819,1352.7861 c -2.11294,69.7272 124.66387,55.9931 124.66387,55.9931"
@@ -98,100 +79,121 @@
          sodipodi:nodetypes="ccc" />
     </g>
     <g
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       transform="translate(489.90536,393.03067)"
-       id="g3791-8"
-       style="opacity:1">
+       id="g4363"
+       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime_small01.png"
+       inkscape:export-xdpi="36.000011"
+       inkscape:export-ydpi="36.000011">
       <rect
-         y="553.04388"
-         x="0.68172961"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         y="744.30151"
+         x="-9.4127626"
          height="498.63654"
          width="498.63654"
-         id="rect3793-8"
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1" />
+         id="rect2991-1"
+         style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
       <rect
-         y="752.36218"
-         x="200"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         y="943.61981"
+         x="189.90549"
          height="100"
          width="100"
-         id="rect3795-2"
+         id="rect3766-7"
          style="fill:#000000;fill-opacity:1;stroke:none" />
+      <g
+         id="g3791-8"
+         transform="translate(489.90546,191.25766)"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect3793-8"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect3795-2"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+      <g
+         transform="translate(989.90542,191.25766)"
+         id="g3797-7"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect3799-1"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect3801-1"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <g
+         id="g3803-1"
+         transform="translate(1489.9053,191.25766)"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect3805-4"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect3807-2"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+      <g
+         transform="translate(1989.9053,191.25766)"
+         id="g3809-6"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect3811-8"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect3813-5"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
     </g>
     <g
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       id="g3797-7"
-       transform="translate(989.90532,393.03067)"
-       style="opacity:1">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1"
-         id="rect3799-1"
-         width="498.63654"
-         height="498.63654"
-         x="0.68172961"
-         y="553.04388" />
-      <rect
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         id="rect3801-1"
-         width="100"
-         height="100"
-         x="200"
-         y="752.36218" />
-    </g>
-    <g
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       transform="translate(1489.9052,393.03067)"
-       id="g3803-1"
-       style="opacity:1">
-      <rect
-         y="553.04388"
-         x="0.68172961"
-         height="498.63654"
-         width="498.63654"
-         id="rect3805-4"
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1" />
-      <rect
-         y="752.36218"
-         x="200"
-         height="100"
-         width="100"
-         id="rect3807-2"
-         style="fill:#000000;fill-opacity:1;stroke:none" />
-    </g>
-    <g
-       inkscape:export-ydpi="90"
-       inkscape:export-xdpi="90"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       id="g3809-6"
-       transform="translate(1989.9052,393.03067)"
-       style="opacity:1">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1"
-         id="rect3811-8"
-         width="498.63654"
-         height="498.63654"
-         x="0.68172961"
-         y="553.04388" />
-      <rect
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         id="rect3813-5"
-         width="100"
-         height="100"
-         x="200"
-         y="752.36218" />
-    </g>
-    <g
-       transform="translate(490.49338,-108.12321)"
+       transform="translate(490.49348,-309.89622)"
        id="g3212"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
@@ -213,11 +215,10 @@
     </g>
     <g
        id="g3988"
-       transform="translate(990.20532,-108.12321)"
+       transform="translate(990.20542,-309.89622)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          d="m 249.50819,1352.7861 c -2.11294,69.7272 124.66387,55.9931 124.66387,55.9931"
@@ -238,12 +239,11 @@
          sodipodi:nodetypes="ccc" />
     </g>
     <g
-       transform="translate(1488.8608,-108.12321)"
+       transform="translate(1488.8609,-309.89622)"
        id="g3996"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
@@ -265,11 +265,10 @@
     </g>
     <g
        id="g4004"
-       transform="translate(1990.6857,-108.12321)"
+       transform="translate(1990.6858,-309.89622)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          d="m 249.50819,1352.7861 c -2.11294,69.7272 124.66387,55.9931 124.66387,55.9931"
@@ -289,33 +288,12 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccc" />
     </g>
-    <rect
-       y="446.07446"
-       x="-9.4128628"
-       height="498.63654"
-       width="498.63654"
-       id="rect2991"
-       style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1;opacity:1"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       y="645.39276"
-       x="189.90541"
-       height="100"
-       width="100"
-       id="rect3766"
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:1"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
     <g
        id="g3930"
-       transform="translate(-10.094592,-106.96943)"
+       transform="translate(-10.094492,-308.74247)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          inkscape:connector-curvature="0"
          id="path3867"
@@ -335,34 +313,11 @@
          style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
     <g
-       id="g3791"
-       transform="translate(489.9054,-106.96943)"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1"
-         id="rect3793"
-         width="498.63654"
-         height="498.63654"
-         x="0.68172961"
-         y="553.04388" />
-      <rect
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         id="rect3795"
-         width="100"
-         height="100"
-         x="200"
-         y="752.36218" />
-    </g>
-    <g
        id="g3925"
-       transform="translate(-24.513067,-106.96943)"
+       transform="translate(-24.512967,-308.74247)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          d="m 761.71742,851.63221 1.05648,95.08262"
@@ -386,34 +341,11 @@
          sodipodi:nodetypes="cc" />
     </g>
     <g
-       transform="translate(989.9054,-106.96943)"
-       id="g3797"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
-      <rect
-         y="553.04388"
-         x="0.68172961"
-         height="498.63654"
-         width="498.63654"
-         id="rect3799"
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1" />
-      <rect
-         y="752.36218"
-         x="200"
-         height="100"
-         width="100"
-         id="rect3801"
-         style="fill:#000000;fill-opacity:1;stroke:none" />
-    </g>
-    <g
        id="g3920"
-       transform="translate(-4.427872,-108.53778)"
+       transform="translate(-4.427772,-310.31082)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          inkscape:connector-curvature="0"
          id="path3892"
@@ -437,36 +369,13 @@
          inkscape:transform-center-y="4.122701" />
     </g>
     <g
-       id="g3803"
-       transform="translate(1489.9054,-106.96943)"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1"
-         id="rect3805"
-         width="498.63654"
-         height="498.63654"
-         x="0.68172961"
-         y="553.04388" />
-      <rect
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         id="rect3807"
-         width="100"
-         height="100"
-         x="200"
-         y="752.36218" />
-    </g>
-    <g
        id="g3915"
-       transform="translate(-6.2996071,-103.83273)"
+       transform="translate(-6.2995071,-305.60577)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
-         style="fill:none;stroke:#000000;stroke-width:10.47492218000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:none;stroke:#000000;stroke-width:10.47492218;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          d="m 1744.2378,842.38638 1.0565,104.32845"
          id="path3898"
          inkscape:connector-curvature="0" />
@@ -488,39 +397,126 @@
          sodipodi:nodetypes="cc" />
     </g>
     <g
-       transform="translate(1989.9054,-106.96943)"
-       id="g3809"
-       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       id="g4379"
+       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime_small01.png"
+       inkscape:export-xdpi="36.000011"
+       inkscape:export-ydpi="36.000011">
       <rect
-         y="553.04388"
-         x="0.68172961"
-         height="498.63654"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+         id="rect2991"
          width="498.63654"
-         id="rect3811"
-         style="fill:none;stroke:#000000;stroke-width:1.36345922999999990;stroke-opacity:1" />
+         height="498.63654"
+         x="-9.4127626"
+         y="244.30142" />
       <rect
-         y="752.36218"
-         x="200"
-         height="100"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3766"
          width="100"
-         id="rect3813"
-         style="fill:#000000;fill-opacity:1;stroke:none" />
+         height="100"
+         x="189.90552"
+         y="443.61972" />
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         transform="translate(489.9055,-308.74247)"
+         id="g3791">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect3793"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect3795"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         id="g3797"
+         transform="translate(989.9055,-308.74247)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect3799"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect3801"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         transform="translate(1489.9055,-308.74247)"
+         id="g3803">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect3805"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect3807"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         id="g3809"
+         transform="translate(1989.9055,-308.74247)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect3811"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect3813"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
     </g>
     <g
        id="g3910"
-       transform="translate(-77.178612,-103.83273)"
+       transform="translate(-77.178512,-305.60577)"
        inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       style="opacity:1">
+       inkscape:export-ydpi="90">
       <path
          inkscape:connector-curvature="0"
          id="path3904"
          d="m 2314.7335,842.38638 1.0565,104.32845"
-         style="fill:none;stroke:#000000;stroke-width:10.47492218000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         style="fill:none;stroke:#000000;stroke-width:10.47492218;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
@@ -537,6 +533,430 @@
          style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
          inkscape:transform-center-x="-6.0349378"
          inkscape:transform-center-y="17.642968" />
+    </g>
+    <g
+       id="g4347"
+       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime_small01.png"
+       inkscape:export-xdpi="36.000011"
+       inkscape:export-ydpi="36.000011">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+         id="rect3050"
+         width="498.63654"
+         height="498.63654"
+         x="-9.4127636"
+         y="1744.3019"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3052"
+         width="100"
+         height="100"
+         x="189.90547"
+         y="1943.6202"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         transform="translate(489.90546,1191.2581)"
+         id="g3062">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect3064"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect3066"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         id="g3068"
+         transform="translate(989.90542,1191.2581)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect3070"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect3072"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         transform="translate(1489.9054,1191.2581)"
+         id="g3074">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect3076"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect3078"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         id="g3080"
+         transform="translate(1989.9054,1191.2581)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect3082"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect3084"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+    </g>
+    <g
+       id="g4339">
+      <path
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="path3260"
+         d="m 135.22866,2135.4522 c 29.58126,-61.2755 92.96967,-54.9367 92.96967,-54.9367 0,0 80.292,8.4519 120.43799,-126.7767"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="path3262"
+         d="m 158.47108,2222.083 c 50.71073,-29.5813 61.27547,-109.8732 61.27547,-109.8732 0,0 65.50136,-8.4518 76.0661,48.5977"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3264"
+         d="m 219.74655,2116.4357 21.12946,-80.292"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4034"
+         d="m 737.41858,2043.7202 0,106.5226"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="path4036"
+         d="m 686.70785,2207.2924 51.82029,-57.0496 55.94001,50.7108"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="path4038"
+         d="m 676.14312,2050.9123 60.52005,49.7975 61.69091,-49.8956"
+         style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g4303"
+       inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime_small01.png"
+       inkscape:export-xdpi="36.000011"
+       inkscape:export-ydpi="36.000011">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         y="1244.3016"
+         x="-9.4127636"
+         height="498.63654"
+         width="498.63654"
+         id="rect4040"
+         style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         y="1443.62"
+         x="189.90547"
+         height="100"
+         width="100"
+         id="rect4042"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+      <g
+         id="g4044"
+         transform="translate(489.90546,691.25786)"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect4046"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect4048"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+      <g
+         transform="translate(989.90542,691.25786)"
+         id="g4050"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect4052"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect4054"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+      <g
+         id="g4056"
+         transform="translate(1489.9054,691.25786)"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1"
+           id="rect4058"
+           width="498.63654"
+           height="498.63654"
+           x="0.68172961"
+           y="553.04388" />
+        <rect
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="rect4060"
+           width="100"
+           height="100"
+           x="200"
+           y="752.36218" />
+      </g>
+      <g
+         transform="translate(1989.9054,691.25786)"
+         id="g4062"
+         inkscape:export-filename="C:\Users\Inoue\Dice\TwitterTEST\images\anime2.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90">
+        <rect
+           y="553.04388"
+           x="0.68172961"
+           height="498.63654"
+           width="498.63654"
+           id="rect4064"
+           style="fill:none;stroke:#000000;stroke-width:1.36345923;stroke-opacity:1" />
+        <rect
+           y="752.36218"
+           x="200"
+           height="100"
+           width="100"
+           id="rect4066"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+      </g>
+    </g>
+    <g
+       id="g4273">
+      <g
+         transform="translate(0,-1.0564735)"
+         id="g4152">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 238.76302,1544.7918 0,95.8732 -32.62674,56.5112"
+           id="path4144"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 234.53713,1642.778 28.967,50.1723"
+           id="path4146"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 194.39113,1564.599 39.08952,39.0895 58.70369,-19.8113"
+           id="path4150"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccc" />
+      </g>
+      <g
+         id="g4157"
+         transform="translate(500.76846,-1.0564735)">
+        <path
+           sodipodi:nodetypes="ccc"
+           inkscape:connector-curvature="0"
+           id="path4159"
+           d="m 238.76302,1544.7918 0,95.8732 -32.62674,56.5112"
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+           sodipodi:nodetypes="cc"
+           inkscape:connector-curvature="0"
+           id="path4161"
+           d="m 234.53713,1642.778 28.967,50.1723"
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+           sodipodi:nodetypes="ccc"
+           inkscape:connector-curvature="0"
+           id="path4163"
+           d="m 194.39113,1564.599 39.08952,39.0895 50.2519,-39.8843"
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+      <text
+         transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)"
+         sodipodi:linespacing="125%"
+         id="text4165"
+         y="1176.8212"
+         x="1020.3876"
+         style="font-size:69.83026123px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Meiryo UI;-inkscape-font-specification:Meiryo UI"
+           y="1176.8212"
+           x="1020.3876"
+           id="tspan4167"
+           sodipodi:role="line">はいたい!!</tspan></text>
+      <g
+         transform="translate(1000.4804,-1.0564735)"
+         id="g4169">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 238.76302,1544.7918 0,95.8732 -32.62674,56.5112"
+           id="path4171"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 234.53713,1642.778 28.967,50.1723"
+           id="path4173"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 194.39113,1564.599 39.08952,39.0895 50.2519,-39.8843"
+           id="path4175"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccc" />
+      </g>
+      <g
+         id="g4181"
+         transform="translate(1501.2489,-1.0564735)">
+        <path
+           sodipodi:nodetypes="ccc"
+           inkscape:connector-curvature="0"
+           id="path4183"
+           d="m 238.76302,1544.7918 0,95.8732 -32.62674,56.5112"
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+           sodipodi:nodetypes="cc"
+           inkscape:connector-curvature="0"
+           id="path4185"
+           d="m 234.53713,1642.778 28.967,50.1723"
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+           sodipodi:nodetypes="ccc"
+           inkscape:connector-curvature="0"
+           id="path4187"
+           d="m 194.39113,1564.599 39.08952,39.0895 58.70369,-19.8113"
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+      <g
+         transform="translate(2000.9609,-1.0564735)"
+         id="g4193">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 238.76302,1544.7918 0,95.8732 -32.62674,56.5112"
+           id="path4195"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 234.53713,1642.778 28.967,50.1723"
+           id="path4197"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           d="m 194.39113,1564.599 39.08952,39.0895 58.70369,-19.8113"
+           id="path4199"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccc" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:69.83026123px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="1349.8588"
+         y="1259.0348"
+         id="text4395"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.99196072,0.12654616,-0.12654616,0.99196072,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan4397"
+           x="1349.8588"
+           y="1259.0348"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Meiryo UI;-inkscape-font-specification:Meiryo UI">はいたい!!</tspan></text>
+      <text
+         transform="matrix(0.95656074,0.29153311,-0.29153311,0.95656074,0,0)"
+         sodipodi:linespacing="125%"
+         id="text4399"
+         y="845.94867"
+         x="2012.7953"
+         style="font-size:69.83026123px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Meiryo UI;-inkscape-font-specification:Meiryo UI"
+           y="845.94867"
+           x="2012.7953"
+           id="tspan4401"
+           sodipodi:role="line">はいたい!!</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:69.83026123px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="2465.3801"
+         y="789.6366"
+         id="text4403"
+         sodipodi:linespacing="125%"
+         transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)"><tspan
+           sodipodi:role="line"
+           id="tspan4405"
+           x="2465.3801"
+           y="789.6366"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Meiryo UI;-inkscape-font-specification:Meiryo UI">はいたい!!</tspan></text>
     </g>
   </g>
 </svg>
