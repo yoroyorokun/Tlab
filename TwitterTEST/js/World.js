@@ -18,10 +18,9 @@ var World = function( canvas ) {/*{{{*/
 			}
 		}
 		
-//		if(this.tweetList.length)
+		// ZOOM 率の変更は　後で実装の見直しが妥当
+		/*
 		WORLD_ZOOM_RATE_TO = 1.0 - ( Math.floor(this.appearCount() / 5) * 0.1);
-		//WORLD_ZOOM_RATE_OLD
-		//console.log(this.appearCount() );
 		
 		if(WORLD_ZOOM_RATE_TO != WORLD_ZOOM_RATE){
 			if(WORLD_ZOOM_RATE_TO > WORLD_ZOOM_RATE)
@@ -33,6 +32,7 @@ var World = function( canvas ) {/*{{{*/
 			if( Math.abs(WORLD_ZOOM_RATE_TO - WORLD_ZOOM_RATE) < 0.01)
 				WORLD_ZOOM_RATE = WORLD_ZOOM_RATE_TO;
 		}
+		*/
 		
 	};/*}}}*/
 	
@@ -52,9 +52,17 @@ var World = function( canvas ) {/*{{{*/
 		
 		//this.ctx.closePath();
 		
+		this.ctx.save();
+		this.ctx.fillStyle = "#ffaaaa";
+		this.ctx.fillRect(0,0,SCREENWIDTH,SCREENHEIGHT);
+		this.ctx.restore();
+		
+		this.ctx.save();
+		this.ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
 		for(var i in this.tweetList){
 			world.tweetList[i].draw(world.ctx);
 		}
+		this.ctx.restore();
 	};/*}}}*/
 
 	this.loop = function(){/*{{{*/
@@ -167,11 +175,13 @@ function twitterSearchCallback(searches) {/*{{{*/
 	world.createTweetList(searches)
 
 	// デバッグ用出力
+	/*
 	  var s = world.formatedTweets(searches);
 	  var element = document.createElement();
 	  element.innerHTML = s; 
 	  document.getElementById("twitter_update_list").insertBefore(element);//innerHTML = "<ul>"+s+"</ul>";
-
+	*/
+	  
 }/*}}}*/
 
 function callJSONP(url) {/*{{{*/

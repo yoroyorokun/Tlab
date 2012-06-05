@@ -29,13 +29,17 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 		this.img.onload = this.loadDone(this);
 		this.draw_state = 0;
 
-		this.pos = new Position( Math.random() , Math.random() );
-		this.screenpos = this.pos.fitScreen();
+		// Position は　Animation が持つ
+		//this.screenpos = this.pos.fitScreen();
 
+		// ツイート文字列抽出によるアニメーションの指定
+		/*
 		if( this.status.match(/歌ってみた/) == null )
 			this.anime = new Animation( Math.floor(Math.random() * 2) );//ANIME_CLASS.WALK );
 		else
 			this.anime = new Animation( ANIME_CLASS.HAITAI );
+		*/
+		this.anime = new Animation( Math.floor(Math.random() * ANIME_IMAGES.length) );
 		
 		// 登場までの待ち時間
 //		if( firstcall == -1) {
@@ -46,7 +50,8 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 				if(step == phase*5)
 					break;
 			}
-			this.anime.appearWaitTime = step * 4 * 1000 / 10;		
+//			this.anime.appearWaitTime = step * 4 * 1000 / 10;
+			this.anime.appearWaitTime = step * 4 * 10;	
 //			this.waitTime
 			TIME_STANDARD = this.time.getHours() *60*60 +  this.time.getMinutes() * 60 + this.time.getSeconds();
 //		}else{
@@ -72,12 +77,12 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 	
 	
 	this.step = function(){
-		this.anime.step(this);
+		this.anime.step();
 
 //		this.pos.x += 0.001;
 //		if (this.pos.x > 1)
 //			this.pos.x = 0;
-		this.screenPos = this.pos.fitScreen();
+		//this.screenPos = this.pos.fitScreen();
 
 	};
 

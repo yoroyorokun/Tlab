@@ -3,72 +3,86 @@
 var Animation = function(kind){
 	
 	this.maxChangeTime = 1000;
-	
+	//AnimationのPositionは0~SCREENWIDTH,0~SCREENHEIGHTにする。
+	//
+	//	┏━━━＞x
+	//	┃
+	//	┃
+	//	V
+	//	y
+	this.pos = new Position( Math.floor(Math.random()*SCREENWIDTH) , Math.floor(Math.random()*SCREENHEIGHT) );
 	this.appearWaitTime = 0;
 	this.kind = kind;
 	this.angle = Math.PI;
 	this.sec = 0;
 	//this.angle = Math.floor( Math.random() * 2) * Math.PI ; //* Math.PI;
 	//this.speed = Math.floor(Math.random() * 5) * 0.0005;
-	this.speed = 0.001;
+	this.speed = 5;
 	this.waitTime = Math.floor( Math.random() * this.maxChangeTime );
 	if(this.speed == 0)
 		this.kind = ANIME_CLASS.SLEEP;
 	this.lifeTime = Math.floor( Math.random() * 12) * 500 + 2000;
 	this.defaultPosition = new Position(0,0);
+	this.image = null;
+	this.jumppingTime = 25;
 	// 100 で　１秒
 	
-	this.step = function(tweet){
+	this.step = function(){
 		
 		if(this.appearWaitTime == 0){
 		
-		if(this.kind != ANIME_CLASS.SLEEP && this.kind != ANIME_CLASS.HAITAI && this.lifeTime > 50){
-			tweet.pos.x += this.speed * Math.cos(this.angle) ;
-			tweet.pos.y += this.speed * Math.sin(this.angle) ;
-		};
-		
-		if(this.lifeTime == 50)
-			this.kind = ANIME_CLASS.OTHER.FALL;
+			if(this.kind != ANIME_CLASS.SLEEP && this.kind != ANIME_CLASS.DANCE && this.kind != ANIME_CLASS.JUMP){
+				var ace = 1;
+				if(this.kind == ANIME_CLASS.RUN)
+					ace = 2;
+				this.pos.x += this.speed * Math.cos(this.angle) * ace ;
+				this.pos.y += this.speed * Math.sin(this.angle) * ace ;
+			};
+	
+//			fall も　ちょっと考える
+//			if(this.lifeTime == 50)
+//				this.kind = ANIME_CLASS.OTHER.FALL;
 
-		if (tweet.pos.x > 1) tweet.pos.x = 0;
-		if (tweet.pos.y > 1) tweet.pos.y = 0;
-		if (tweet.pos.x < 0) tweet.pos.x = 1;
-		if (tweet.pos.y < 0) tweet.pos.y = 1;
-		
-		this.sec++;
-		if( this.sec >= 50 )
-			this.sec = 0;
-		
-		this.waitTime--;
-		
-		if(this.waitTime < 0 ){
-			this.waitTime= Math.floor( Math.random() * this.maxChangeTime );
-			//this.kind = Math.floor( Math.random() * 3 );
-			this.kind = Math.floor( Math.random() * 2 );
-			if( this.kind != ANIME_CLASS.HAITAI )
-				this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
-			else
-				this.angle = Math.PI;
-		}
-		
-		this.lifeTime--;
+			if ( this.pos.x > (SCREENWIDTH / WORLD_ZOOM_RATE) ) this.pos.x = 0;
+			if ( this.pos.y > (SCREENHEIGHT / WORLD_ZOOM_RATE)) this.pos.y = 0;
+			if ( this.pos.x < 0) this.pos.x = (SCREENWIDTH / WORLD_ZOOM_RATE);
+			if ( this.pos.y < 0) this.pos.y = (SCREENHEIGHT / WORLD_ZOOM_RATE);
+			
+			this.sec++;
+			if( this.sec >= (ANIME_IMAGES[this.kind].length  * 1) )
+				this.sec = 0;
+			this.image = ANIME_IMAGES[this.kind][Math.floor(this.sec/1)];
+			
+			this.waitTime--;
+			
+			if(this.waitTime < 0 ){
+				this.waitTime= Math.floor( Math.random() * this.maxChangeTime );
+				//this.kind = Math.floor( Math.random() * 3 );
+				this.kind = Math.floor( Math.random() * ANIME_IMAGES.length );
+//				if( this.kind != ANIME_CLASS.HAITAI )
+					this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
+//				else
+//					this.angle = Math.PI;
+			}
+			
+			this.lifeTime--;
 		}else{
 			this.appearWaitTime--;
-			if(this.appearWaitTime == 200){
-				this.kind = ANIME_CLASS.OTHER.ENTER;
-				if( this.kind != ANIME_CLASS.HAITAI )
-					this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
-				else
-					this.angle = Math.PI;				
-				this.defaultPosition.x = tweet.pos.x;
-				this.defaultPosition.y = tweet.pos.y;
-				tweet.pos.x = this.defaultPosition.x - this.appearWaitTime / 2000;
-				tweet.pos.y = this.defaultPosition.y + ( (this.appearWaitTime/200) * ((this.appearWaitTime/200) - .8));
-			}else if(this.appearWaitTime < 200){
-				tweet.pos.x = this.defaultPosition.x - this.appearWaitTime / 2000;
-				tweet.pos.y = this.defaultPosition.y + ( (this.appearWaitTime/200) * ((this.appearWaitTime/200) - .8));
+			if(this.appearWaitTime == this.jumppingTime){
+				this.kind = ANIME_CLASS.JUMP;
+				this.image = ANIME_IMAGES[this.kind][0];
+				this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
+				this.defaultPosition.x = this.pos.x;
+				this.defaultPosition.y = this.pos.y;
+				this.pos.x = this.defaultPosition.x - (SCREENWIDTH  * 0.1 / WORLD_ZOOM_RATE);
+				this.pos.y = this.defaultPosition.y + ( ( (this.appearWaitTime/this.jumppingTime) - (SCREENWIDTH * 0.1 / WORLD_ZOOM_RATE ) ) * ( (this.appearWaitTime/this.jumppingTime) -  (SCREENWIDTH * 0.04/ WORLD_ZOOM_RATE)));
+			}else if(this.appearWaitTime < this.jumppingTime){
+				//console.log(this.pos.y - this.defaultPosition.y);
+				this.pos.x = this.defaultPosition.x - (SCREENWIDTH * 0.1 / WORLD_ZOOM_RATE) * (this.appearWaitTime / this.jumppingTime);
+				this.pos.y = this.defaultPosition.y + ( (this.appearWaitTime/this.jumppingTime) * ((this.appearWaitTime/this.jumppingTime) - .8)) * (SCREENHEIGHT);
+				//this.pos.y = this.defaultPosition.y + ( (this.pos.x - this.defaultPosition.x) * ( (this.pos.x - this.defaultPosition.x) -  (SCREENWIDTH * 0.1 * 0.4 / WORLD_ZOOM_RATE) )) * WORLD_ZOOM_RATE;
 				if( this.appearWaitTime == 0)
-					this.kind = Math.floor( Math.random() * 3 );
+					this.kind = Math.floor( Math.random() * ANIME_IMAGES.length );
 			}
 			//	if( this.appearWaitTime % 10 == 0)
 			//		tweet.pos.x += 1;
@@ -79,37 +93,49 @@ var Animation = function(kind){
 
 	this.draw = function(ctx,tweet){
 	
-		if( this.appearWaitTime < 200)
-		{
+		if( this.appearWaitTime >= this.jumppingTime )
+			return
+//		if( this.appearWaitTime < 200) //ジャンプして出てくるときになったら
+//		{
 	
-		if ( this.lifeTime > 50){
-		ctx.save();
-		ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
+		// fall 処理は後回し
+		//if ( this.lifeTime > 50){
+	
+		//ctx.save();
+		//ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
 		
-		ctx.drawImage(tweet.img, tweet.screenPos.x-25, tweet.screenPos.y-25,50,50);
+		// 86 : 200
+		
+		//　画像を表示させる点（スクリーン座標）を原点とする世界へ移動
+		ctx.save();
+		ctx.translate(this.pos.x,this.pos.y);
+		
+		var iconLength = 86 * WORLD_ZOOM_RATE;
+		ctx.drawImage(tweet.img, -0.5 * iconLength, -0.5 * iconLength ,iconLength,iconLength);
 
+		
 		if ( this.angle < Math.PI/2 || this.angle > Math.PI*3/2 )
-/*			ctx.drawImage(ANIME_IMAGE,
-				Math.floor(this.sec / 10) * 500 ,this.kind * 500,
-				500,500,
-				tweet.screenPos.x-125 , tweet.screenPos.y-125
-				,250,250);*/
 			// 反転
-			ctx.transform(-1,0,0,1,tweet.screenPos.x+125, tweet.screenPos.y-125);
+			//ctx.transform(-1,0,0,1,tweet.screenPos.x+125, tweet.screenPos.y-125);
+			ctx.transform(-1,0,0,1,0,0);
 		else
-/*			ctx.drawImage(ANIME_IMAGE,
-				Math.floor(this.sec / 10) * 500 ,this.kind * 500,
-				500,500,
-				tweet.screenPos.x-125, tweet.screenPos.y-125
-				,250,250);*/
-			ctx.transform(1,0,0,1,tweet.screenPos.x-125, tweet.screenPos.y-125);
-
+			//ctx.transform(1,0,0,1,tweet.screenPos.x-125, tweet.screenPos.y-125);
+			ctx.transform(1,0,0,1,0,0);
+		
+	
+/*	
 		ctx.save();
 		ctx.translate(100,100);
 		ctx.drawImage(tweet.img, 0,0);
 //		ctx.drawImage(tweet.img, tweet.screenPos.x-25, tweet.screenPos.y-25,50,50);
 		ctx.restore();
+	*/
+		var nekoLength = 200 * WORLD_ZOOM_RATE;
+		ctx.drawImage(this.image, -0.5*nekoLength , -0.5*nekoLength, nekoLength ,nekoLength);
+
+		ctx.restore();
 		
+/*		
 		if( this.kind < 30){
 			ctx.drawImage(ANIME_IMAGE,
 					Math.floor(this.sec / 10) * ANIME_WIDTH ,this.kind * ANIME_WIDTH,
@@ -123,9 +149,15 @@ var Animation = function(kind){
 					0, 0
 					,250,250);
 		}
-		ctx.restore();
+	*/	
+		//ctx.restore();
 		//ctx.drawImage(tweet.img, tweet.screenPos.x-25, tweet.screenPos.y-25,50,50);
-		}else if (this.lifeTime > 0){
+
+		// fall処理は後回し
+		/*
+		}
+		else if (this.lifeTime > 0)
+		{
 			ctx.save();
 			ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
 				
@@ -174,19 +206,10 @@ var Animation = function(kind){
 				ctx.restore();
 			
 			
-		}
+		}*/
 
-		};
+//		};
 	}
 
 }
 
-var ANIME_CLASS = {
-	"WALK"	: 0,
-	"SLEEP"	: 1,
-	"HAITAI": 2,
-	"OTHER"	: {
-		"ENTER": 30,
-		"FALL" : 31
-	}
-}
