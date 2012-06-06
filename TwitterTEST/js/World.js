@@ -130,9 +130,9 @@ var World = function( canvas ) {/*{{{*/
 			//初回起動時(おそらく)
 			for(var i in searches["results"]){
 				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , -1 );
-				if(tweet != null)
+				if( !tweet.hasOwnProperty("removeflg") )//tweet != null)
 					world.tweetList.push(tweet);
-
+				
 				//tweet is null -> 被りなので追加せず
 			}
 		}else{

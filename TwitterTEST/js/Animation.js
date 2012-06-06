@@ -25,6 +25,7 @@ var Animation = function(kind){
 	this.defaultPosition = new Position(0,0);
 	this.image = null;
 	this.jumppingTime = 25;
+	this.icon_heni = new Position(0,0);
 	// 100 で　１秒
 	
 	this.step = function(){
@@ -52,6 +53,11 @@ var Animation = function(kind){
 			if( this.sec >= (ANIME_IMAGES[this.kind].length  * 1) )
 				this.sec = 0;
 			this.image = ANIME_IMAGES[this.kind][Math.floor(this.sec/1)];
+			if ( this.angle < Math.PI/2 || this.angle > Math.PI*3/2 )
+				this.icon_heni.x = -1 * ANIME_POS[this.kind][Math.floor(this.sec/1)].x;
+			else
+				this.icon_heni.x = ANIME_POS[this.kind][Math.floor(this.sec/1)].x;
+			this.icon_heni.y = ANIME_POS[this.kind][Math.floor(this.sec/1)].y;
 			
 			this.waitTime--;
 			
@@ -70,6 +76,7 @@ var Animation = function(kind){
 			this.appearWaitTime--;
 			if(this.appearWaitTime == this.jumppingTime){
 				this.kind = ANIME_CLASS.JUMP;
+				this.sec = 0;
 				this.image = ANIME_IMAGES[this.kind][0];
 				this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
 				this.defaultPosition.x = this.pos.x;
@@ -110,9 +117,14 @@ var Animation = function(kind){
 		ctx.save();
 		ctx.translate(this.pos.x,this.pos.y);
 		
+		ctx.save();
+
+		ctx.translate( this.icon_heni.x * WORLD_ZOOM_RATE , this.icon_heni.y * WORLD_ZOOM_RATE );
+			
 		var iconLength = 86 * WORLD_ZOOM_RATE;
 		ctx.drawImage(tweet.img, -0.5 * iconLength, -0.5 * iconLength ,iconLength,iconLength);
 
+		ctx.restore();
 		
 		if ( this.angle < Math.PI/2 || this.angle > Math.PI*3/2 )
 			// 反転
@@ -131,6 +143,8 @@ var Animation = function(kind){
 		ctx.restore();
 	*/
 		var nekoLength = 200 * WORLD_ZOOM_RATE;
+		if(this.appearWaitTime > 0)
+			ctx.translate(0,20 * WORLD_ZOOM_RATE);
 		ctx.drawImage(this.image, -0.5*nekoLength , -0.5*nekoLength, nekoLength ,nekoLength);
 
 		ctx.restore();

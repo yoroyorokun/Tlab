@@ -2,6 +2,14 @@
 
 var Tweet = function(date , index , firstcall ) {/*{{{*/
 
+	
+	/* 微調整用に一個だけ出す
+	if(index != 0){
+		this.removeflg = true;
+		return null;
+	}
+	*/
+
 	this.loadDone = function(t){
 		t.img_load_done = true;
 		//t.draw_state = 0;
@@ -39,7 +47,9 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 		else
 			this.anime = new Animation( ANIME_CLASS.HAITAI );
 		*/
+		
 		this.anime = new Animation( Math.floor(Math.random() * ANIME_IMAGES.length) );
+		//this.anime = new Animation( 4 );
 		
 		// 登場までの待ち時間
 //		if( firstcall == -1) {
@@ -72,7 +82,10 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 			}*/
 		//}
 		
-	}else{ return null; };
+	}else{
+		this.removeflg = true;
+		return null; 
+	};
 	
 	
 	

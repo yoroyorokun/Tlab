@@ -96,6 +96,50 @@ ANIME_IMAGES[ANIME_CLASS.JUMP][4].src = "./images/cat/jump_05.png";
 ANIME_IMAGES[ANIME_CLASS.JUMP][5] = new Image();
 ANIME_IMAGES[ANIME_CLASS.JUMP][5].src = "./images/cat/jump_06.png";
 
+
+var ANIME_POS = new Array
+ANIME_POS[ANIME_CLASS.WALK] = new Array();
+ANIME_POS[ANIME_CLASS.WALK][0] = new Position(0,-3);
+ANIME_POS[ANIME_CLASS.WALK][1] = new Position(0,-1);
+ANIME_POS[ANIME_CLASS.WALK][2] = new Position(0,0);
+ANIME_POS[ANIME_CLASS.WALK][3] = new Position(0,-1);
+ANIME_POS[ANIME_CLASS.WALK][4] = new Position(0,-3);
+ANIME_POS[ANIME_CLASS.WALK][5] = new Position(0,-1);
+ANIME_POS[ANIME_CLASS.WALK][6] = new Position(0,+0);
+ANIME_POS[ANIME_CLASS.WALK][7] = new Position(0,-1);
+
+ANIME_POS[ANIME_CLASS.SLEEP] = new Array();
+ANIME_POS[ANIME_CLASS.SLEEP][0] = new Position(0,30);
+ANIME_POS[ANIME_CLASS.SLEEP][1] = new Position(1,31);
+ANIME_POS[ANIME_CLASS.SLEEP][2] = new Position(2,32);
+ANIME_POS[ANIME_CLASS.SLEEP][3] = new Position(1,31);
+
+ANIME_POS[ANIME_CLASS.RUN] = new Array();
+ANIME_POS[ANIME_CLASS.RUN][0] = new Position(1,-4);
+ANIME_POS[ANIME_CLASS.RUN][1] = new Position(1,-2);
+ANIME_POS[ANIME_CLASS.RUN][2] = new Position(1,0);
+ANIME_POS[ANIME_CLASS.RUN][3] = new Position(1,2);
+
+ANIME_POS[ANIME_CLASS.DANCE] = new Array();
+ANIME_POS[ANIME_CLASS.DANCE][0] = new Position(-4,-1);
+ANIME_POS[ANIME_CLASS.DANCE][1] = new Position(-4,0);
+ANIME_POS[ANIME_CLASS.DANCE][2] = new Position(-3,1);
+ANIME_POS[ANIME_CLASS.DANCE][3] = new Position(-2,0);
+ANIME_POS[ANIME_CLASS.DANCE][4] = new Position(0,-2);
+ANIME_POS[ANIME_CLASS.DANCE][5] = new Position(0,0);
+ANIME_POS[ANIME_CLASS.DANCE][6] = new Position(-2,0);
+ANIME_POS[ANIME_CLASS.DANCE][7] = new Position(-3,0);
+
+
+ANIME_POS[ANIME_CLASS.JUMP] = new Array();
+ANIME_POS[ANIME_CLASS.JUMP][0] = new Position(1,-20);
+ANIME_POS[ANIME_CLASS.JUMP][1] = new Position(1,7);
+ANIME_POS[ANIME_CLASS.JUMP][2] = new Position(1,3);
+ANIME_POS[ANIME_CLASS.JUMP][3] = new Position(1,1);
+ANIME_POS[ANIME_CLASS.JUMP][4] = new Position(1,3);
+ANIME_POS[ANIME_CLASS.JUMP][5] = new Position(1,1);
+
+
 //var ANIME_IMAGE = new Image();
 //ANIME_IMAGE.src = "./images/anime2.png";
 //ANIME_IMAGE.src = "./images/anime_small01.png";
