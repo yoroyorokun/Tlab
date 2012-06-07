@@ -21,7 +21,7 @@ var Animation = function(kind){
 	this.waitTime = Math.floor( Math.random() * this.maxChangeTime );
 	if(this.speed == 0)
 		this.kind = ANIME_CLASS.SLEEP;
-	this.lifeTime = Math.floor( Math.random() * 12) * 500 + 2000;
+	this.lifeTime = Math.floor( Math.random() * 20) * 10 + 200;
 	this.defaultPosition = new Position(0,0);
 	this.image = null;
 	this.jumppingTime = 25;
@@ -145,7 +145,8 @@ var Animation = function(kind){
 		var nekoLength = 200 * WORLD_ZOOM_RATE;
 		if(this.appearWaitTime > 0)
 			ctx.translate(0,20 * WORLD_ZOOM_RATE);
-		ctx.drawImage(this.image, -0.5*nekoLength , -0.5*nekoLength, nekoLength ,nekoLength);
+		if(this.image != null)
+			ctx.drawImage(this.image, -0.5*nekoLength , -0.5*nekoLength, nekoLength ,nekoLength);
 
 		ctx.restore();
 		

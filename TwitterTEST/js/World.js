@@ -140,7 +140,7 @@ var World = function( canvas ) {/*{{{*/
 			//二回目以降のコールバック
 			//searches["results"] = searches["results"].reverse();
 			for(var i in searches["results"]){
-				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , i );
+				var tweet = new Tweet(searches["results"][i] , i , i );
 				if(tweet != null)
 					world.tweetList.push(tweet);
 

@@ -54,14 +54,17 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 		// 登場までの待ち時間
 //		if( firstcall == -1) {
 			var phase = Math.floor(index / 10)
-			var step = phase*5;
+			var step = phase*10;
+
+			/*
 			while( Math.floor( Math.random() * 3 ) == 0){
 				step++;
 				if(step == phase*5)
 					break;
-			}
+			}*/
+			step += (Math.floor(Math.random() * 9));
 //			this.anime.appearWaitTime = step * 4 * 1000 / 10;
-			this.anime.appearWaitTime = step * 4 * 10;	
+			this.anime.appearWaitTime = step * 20;	
 //			this.waitTime
 			TIME_STANDARD = this.time.getHours() *60*60 +  this.time.getMinutes() * 60 + this.time.getSeconds();
 //		}else{
