@@ -13,7 +13,8 @@ var Animation = function(kind){
 	this.pos = new Position( Math.floor(Math.random()*SCREENWIDTH) , Math.floor(Math.random()*SCREENHEIGHT) );
 	this.appearWaitTime = 0;
 	this.kind = kind;
-	this.angle = Math.PI;
+//	this.angle = Math.PI;
+	this.angle = Math.floor( Math.random() * 16) * ( Math.PI / 8) ;
 	this.sec = 0;
 	//this.angle = Math.floor( Math.random() * 2) * Math.PI ; //* Math.PI;
 	//this.speed = Math.floor(Math.random() * 5) * 0.0005;
@@ -26,6 +27,7 @@ var Animation = function(kind){
 	this.image = null;
 	this.jumppingTime = 25;
 	this.icon_heni = new Position(0,0);
+	this.icon_trans = 0;
 	// 100 で　１秒
 	
 	this.step = function(){
@@ -59,6 +61,24 @@ var Animation = function(kind){
 				this.icon_heni.x = ANIME_POS[this.kind][Math.floor(this.sec/1)].x;
 			this.icon_heni.y = ANIME_POS[this.kind][Math.floor(this.sec/1)].y;
 			
+
+			var ang = this.angle/(Math.PI/8);
+			if( this.kind != ANIME_CLASS.DANCE && this.kind != ANIME_CLASS.JUMP){
+				if( ang < 4 )
+					this.icon_trans = ang * 0.1 / 4;
+	//				this.icon_trans = -0.1;
+				else if( ang < 8 )
+					this.icon_trans = ( ang - 8 ) * 0.1 /4;
+	//				this.icon_trans = 0.1;
+				else if( ang < 12)
+					this.icon_trans = ( ang - 8 ) * 0.1 /4;
+	//				this.icon_trans = 0.1;
+				else
+					this.icon_trans = (ang - 16 ) * 0.1 /4 ;
+	//				this.icon_trans = -0.1;
+			}else
+				this.icon_trans = 0;
+			
 			this.waitTime--;
 			
 			if(this.waitTime < 0 ){
@@ -66,7 +86,8 @@ var Animation = function(kind){
 				//this.kind = Math.floor( Math.random() * 3 );
 				this.kind = Math.floor( Math.random() * ANIME_IMAGES.length );
 //				if( this.kind != ANIME_CLASS.HAITAI )
-					this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
+					//this.angle = Math.floor( Math.random() * 2) * Math.PI ;
+					this.angle = Math.floor( Math.random() * 16) * ( Math.PI / 8) ;	
 //				else
 //					this.angle = Math.PI;
 			}
@@ -78,7 +99,9 @@ var Animation = function(kind){
 				this.kind = ANIME_CLASS.JUMP;
 				this.sec = 0;
 				this.image = ANIME_IMAGES[this.kind][0];
-				this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
+				//this.angle = Math.floor( Math.random() * 2) * Math.PI ; 
+				this.angle = Math.floor( Math.random() * 16) * ( Math.PI / 8) ;
+				//this.angle = 2 * ( Math.PI / 8) ;
 				this.defaultPosition.x = this.pos.x;
 				this.defaultPosition.y = this.pos.y;
 				this.pos.x = this.defaultPosition.x - (SCREENWIDTH  * 0.1 / WORLD_ZOOM_RATE);
@@ -119,12 +142,15 @@ var Animation = function(kind){
 		
 		ctx.save();
 
-		ctx.translate( this.icon_heni.x * WORLD_ZOOM_RATE , this.icon_heni.y * WORLD_ZOOM_RATE );
+		ctx.transform( 1, this.icon_trans , 0 , 1- Math.abs(this.icon_trans)  ,this.icon_heni.x * WORLD_ZOOM_RATE , this.icon_heni.y * WORLD_ZOOM_RATE );
+//		ctx.translate( this.icon_heni.x * WORLD_ZOOM_RATE , this.icon_heni.y * WORLD_ZOOM_RATE );
 			
 		var iconLength = 86 * WORLD_ZOOM_RATE;
 		ctx.drawImage(tweet.img, -0.5 * iconLength, -0.5 * iconLength ,iconLength,iconLength);
 
 		ctx.restore();
+		
+		ctx.transform( 1, this.icon_trans , 0 , 1- Math.abs(this.icon_trans)  ,0,0);
 		
 		if ( this.angle < Math.PI/2 || this.angle > Math.PI*3/2 )
 			// 反転
