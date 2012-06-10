@@ -143,9 +143,11 @@ var ANIME_SOUNDS = [
 	"./sounds/walk.mp3",
 	"./sounds/walk.mp3",
 	"./sounds/run.mp3",
-	"./sounds/jump.mp3",
+	"./sounds/run.mp3",
 	"./sounds/jump.mp3"
 ];
+
+var sound_play = false;
 
 /*var ANIME_SOUNDS = {
 	"WALK"	: "./sounds/walk.mp3",
@@ -155,13 +157,14 @@ var ANIME_SOUNDS = [
 	"JUMP": "./sounds/jump.mp3"
 };*/
 
-/*
+
 document.open();
-document.write("<audio id=\"run\">");
-document.write("<source src=\"./sounds/run.mp3\"></source>");
-document.write("</audio>")
+var func = "sound_play =! sound_play;";
+document.write(" <button id=\"sound_button\" type=\"button\" onclick=\""+ func + "\"> 効果音On/Off </button> ");
+//document.write("<source src=\"./sounds/run.mp3\"></source>");
+//document.write("</audio>")
 document.close();
-*/
+
 
 //var ANIME_IMAGE = new Image();
 //ANIME_IMAGE.src = "./images/anime2.png";

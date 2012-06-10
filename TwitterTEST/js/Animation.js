@@ -80,8 +80,10 @@ var Animation = function(kind){
 			}else
 				this.icon_trans = 0;
 			
-			//if(this.sound != null)
-			//	this.sound.play();
+			if(this.sound != null && sound_play )
+				this.sound.play();
+			if(this.sound != null && sound_play == false)
+				this.sound.pause();
 			
 			
 			this.waitTime--;
@@ -146,6 +148,10 @@ var Animation = function(kind){
 		
 		//　画像を表示させる点（スクリーン座標）を原点とする世界へ移動
 		ctx.save();
+		
+		if(this.lifeTime < 50)
+			ctx.globalAlpha = this.lifeTime * 0.02;
+		
 		ctx.translate(this.pos.x,this.pos.y);
 		
 		ctx.save();
