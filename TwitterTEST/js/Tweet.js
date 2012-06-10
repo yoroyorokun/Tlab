@@ -15,7 +15,8 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 		//t.draw_state = 0;
 	}
 
-	if(world.tweetList[date.text] == null){
+	if(world.tweetList[date.from_user] == null){	
+//	if(world.tweetList[date.text] == null){
 		this.username = date.from_user;
 		this.id = date.id;
 		this.icon_url = date.profile_image_url;

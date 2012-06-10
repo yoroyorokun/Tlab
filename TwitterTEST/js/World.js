@@ -131,8 +131,11 @@ var World = function( canvas ) {/*{{{*/
 			for(var i in searches["results"]){
 				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , -1 );
 				if( !tweet.hasOwnProperty("removeflg") )//tweet != null)
-					world.tweetList.push(tweet);
-				
+					//world.tweetList.push(tweet);
+					world.tweetList[searches["results"][i].from_user] = tweet;
+				else
+					console.log(searches["results"][i].from_user);
+					
 				//tweet is null -> 被りなので追加せず
 			}
 		}else{
@@ -142,7 +145,11 @@ var World = function( canvas ) {/*{{{*/
 			for(var i in searches["results"]){
 				var tweet = new Tweet(searches["results"][i] , i , i );
 				if(tweet != null)
-					world.tweetList.push(tweet);
+					//world.tweetList.push(tweet);
+					world.tweetList[searches["results"][i].from_user] = tweet;
+				else
+					console.log(searches["results"][i].from_user);
+					
 
 				//tweet is null -> 被りなので追加せず
 			}
@@ -175,12 +182,12 @@ function twitterSearchCallback(searches) {/*{{{*/
 	world.createTweetList(searches)
 
 	// デバッグ用出力
-	/*
+	///*
 	  var s = world.formatedTweets(searches);
 	  var element = document.createElement();
 	  element.innerHTML = s; 
 	  document.getElementById("twitter_update_list").insertBefore(element);//innerHTML = "<ul>"+s+"</ul>";
-	*/
+	//*/
 	  
 }/*}}}*/
 
