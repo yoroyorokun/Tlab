@@ -28,6 +28,7 @@ var Animation = function(kind){
 	this.jumppingTime = 25;
 	this.icon_heni = new Position(0,0);
 	this.icon_trans = 0;
+	this.sound = null;
 	// 100 で　１秒
 	
 	this.step = function(){
@@ -79,6 +80,10 @@ var Animation = function(kind){
 			}else
 				this.icon_trans = 0;
 			
+			//if(this.sound != null)
+			//	this.sound.play();
+			
+			
 			this.waitTime--;
 			
 			if(this.waitTime < 0 ){
@@ -90,6 +95,7 @@ var Animation = function(kind){
 					this.angle = Math.floor( Math.random() * 16) * ( Math.PI / 8) ;	
 //				else
 //					this.angle = Math.PI;
+				this.sound = new Audio(ANIME_SOUNDS[this.kind]);
 			}
 			
 			this.lifeTime--;
@@ -111,8 +117,10 @@ var Animation = function(kind){
 				this.pos.x = this.defaultPosition.x - (SCREENWIDTH * 0.1 / WORLD_ZOOM_RATE) * (this.appearWaitTime / this.jumppingTime);
 				this.pos.y = this.defaultPosition.y + ( (this.appearWaitTime/this.jumppingTime) * ((this.appearWaitTime/this.jumppingTime) - .8)) * (SCREENHEIGHT);
 				//this.pos.y = this.defaultPosition.y + ( (this.pos.x - this.defaultPosition.x) * ( (this.pos.x - this.defaultPosition.x) -  (SCREENWIDTH * 0.1 * 0.4 / WORLD_ZOOM_RATE) )) * WORLD_ZOOM_RATE;
-				if( this.appearWaitTime == 0)
+				if( this.appearWaitTime == 0){
 					this.kind = Math.floor( Math.random() * ANIME_IMAGES.length );
+					this.sound = new Audio(ANIME_SOUNDS[this.kind]);
+				}
 			}
 			//	if( this.appearWaitTime % 10 == 0)
 			//		tweet.pos.x += 1;

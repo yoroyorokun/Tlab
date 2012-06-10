@@ -139,6 +139,29 @@ ANIME_POS[ANIME_CLASS.JUMP][3] = new Position(1,1);
 ANIME_POS[ANIME_CLASS.JUMP][4] = new Position(1,3);
 ANIME_POS[ANIME_CLASS.JUMP][5] = new Position(1,1);
 
+var ANIME_SOUNDS = [
+	"./sounds/walk.mp3",
+	"./sounds/walk.mp3",
+	"./sounds/run.mp3",
+	"./sounds/jump.mp3",
+	"./sounds/jump.mp3"
+];
+
+/*var ANIME_SOUNDS = {
+	"WALK"	: "./sounds/walk.mp3",
+	"SLEEP"	: "./sounds/walk.mp3",
+	"RUN": "./sounds/run.mp3",
+	"DANCE": "./sounds/jump.mp3",
+	"JUMP": "./sounds/jump.mp3"
+};*/
+
+/*
+document.open();
+document.write("<audio id=\"run\">");
+document.write("<source src=\"./sounds/run.mp3\"></source>");
+document.write("</audio>")
+document.close();
+*/
 
 //var ANIME_IMAGE = new Image();
 //ANIME_IMAGE.src = "./images/anime2.png";
