@@ -125,21 +125,21 @@ var World = function( canvas ) {/*{{{*/
 	this.createTweetList = function(searches){/*{{{*/
 	
 		if(world.tweetList.length == 0 ){
-			console.log(searches["results"].length);
-			console.log("おそらく1回目コールバック");
+			//console.log(searches["results"].length);
+			//console.log("おそらく1回目コールバック");
 			//初回起動時(おそらく)
 			for(var i in searches["results"]){
 				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , -1 );
 				if( !tweet.hasOwnProperty("removeflg") )//tweet != null)
 					//world.tweetList.push(tweet);
 					world.tweetList[searches["results"][i].from_user] = tweet;
-				else
-					console.log(searches["results"][i].from_user);
-					
+				else{
+					//console.log(searches["results"][i].from_user);
+				}
 				//tweet is null -> 被りなので追加せず
 			}
 		}else{
-			console.log("おそらく二回目コールバック");
+			//console.log("おそらく二回目コールバック");
 			//二回目以降のコールバック
 			//searches["results"] = searches["results"].reverse();
 			for(var i in searches["results"]){
@@ -147,9 +147,9 @@ var World = function( canvas ) {/*{{{*/
 				if(tweet != null)
 					//world.tweetList.push(tweet);
 					world.tweetList[searches["results"][i].from_user] = tweet;
-				else
-					console.log(searches["results"][i].from_user);
-					
+				else{
+					//console.log(searches["results"][i].from_user);
+				}
 
 				//tweet is null -> 被りなので追加せず
 			}
@@ -196,7 +196,7 @@ function callJSONP(url) {/*{{{*/
 	target.charset = 'utf-8';
 	target.src = url;
 	document.body.appendChild(target);
-	console.log(" entered callJSONP ");
+	//console.log(" entered callJSONP ");
 }/*}}}*/
 
 function form_date(date) {/*{{{*/
