@@ -1,5 +1,9 @@
 ﻿// 初期化
 
+audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+});
+
 var SCREENWIDTH = 800;
 var SCREENHEIGHT = 600;
 
@@ -158,13 +162,13 @@ var sound_play = false;
 };*/
 
 
-document.open();
+/*
+var element = document.createElement("div");
 var func = "sound_play =! sound_play;";
-document.write(" <button id=\"sound_button\" type=\"button\" onclick=\""+ func + "\"> 効果音On/Off </button> ");
-//document.write("<source src=\"./sounds/run.mp3\"></source>");
-//document.write("</audio>")
-document.close();
-
+element.innerHTML = " <button id=\"sound_button\" type=\"button\" onclick=\""+ func + "\"> 効果音On/Off </button> ";
+var tmp = document.getElementById("button");
+tmp.insertBefore(element);
+*/
 
 //var ANIME_IMAGE = new Image();
 //ANIME_IMAGE.src = "./images/anime2.png";

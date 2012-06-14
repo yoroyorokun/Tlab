@@ -11,7 +11,9 @@ var World = function( canvas ) {/*{{{*/
 		// lifeTimeが０のものを削除
 		for(var i in this.tweetList){
 			if ( world.tweetList[i].death() ){
-				world.tweetList.splice(i,1);
+//				console.log(i);
+				delete world.tweetList[i];
+//				world.tweetList.splice(i,1);
 				// おそらく一気にやるとズレるので一回飛ばす
 				// 描画自体は消えているので１フレームずれても問題なし
 				break;
@@ -129,7 +131,7 @@ var World = function( canvas ) {/*{{{*/
 			//console.log("おそらく1回目コールバック");
 			//初回起動時(おそらく)
 			for(var i in searches["results"]){
-				var tweet = new Tweet(searches["results"][i] , world.tweetList.length , -1 );
+				var tweet = new Tweet(searches["results"][i] , i, -1 );
 				if( !tweet.hasOwnProperty("removeflg") )//tweet != null)
 					//world.tweetList.push(tweet);
 					world.tweetList[searches["results"][i].from_user] = tweet;
@@ -184,7 +186,7 @@ function twitterSearchCallback(searches) {/*{{{*/
 	// デバッグ用出力
 	///*
 	  var s = world.formatedTweets(searches);
-	  var element = document.createElement();
+	  var element = document.createElement("div");
 	  element.innerHTML = s; 
 	  document.getElementById("twitter_update_list").insertBefore(element);//innerHTML = "<ul>"+s+"</ul>";
 	//*/
