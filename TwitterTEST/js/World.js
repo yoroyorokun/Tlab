@@ -54,8 +54,23 @@ var World = function( canvas ) {/*{{{*/
 		
 		//this.ctx.closePath();
 		
+		var count = 0 
+		for(var i in this.tweetList){ 
+			if(this.tweetList[i].anime.appearWaitTime <= 0 && this.tweetList[i].anime.lifeTime >= 0)
+				count++; 
+		}
+		//console.log(count);
+		
+		var col = 16 * 10 + 10;
+		col -= count*5;
+		
+		col = col.toString(16);
+		
 		this.ctx.save();
-		this.ctx.fillStyle = "#ffaaaa";
+		
+		
+		
+		this.ctx.fillStyle = "#ff" + col + col ;
 		this.ctx.fillRect(0,0,SCREENWIDTH,SCREENHEIGHT);
 		this.ctx.restore();
 		

@@ -149,8 +149,8 @@ var Animation = function(kind){
 		//　画像を表示させる点（スクリーン座標）を原点とする世界へ移動
 		ctx.save();
 		
-		if(this.lifeTime < 50)
-			ctx.globalAlpha = this.lifeTime * 0.02;
+		if(this.lifeTime < 30)
+			ctx.globalAlpha = this.lifeTime * 0.03;
 		
 		ctx.translate(this.pos.x,this.pos.y);
 		
