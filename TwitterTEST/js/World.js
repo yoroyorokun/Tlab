@@ -3,6 +3,9 @@
 var World = function( canvas ) {/*{{{*/
 
 	this.step = function(){/*{{{*/
+	
+		POSES = new Array;
+	
 		for(var i in this.tweetList){
 			world.tweetList[i].step();
 		}
@@ -35,6 +38,12 @@ var World = function( canvas ) {/*{{{*/
 				WORLD_ZOOM_RATE = WORLD_ZOOM_RATE_TO;
 		}
 		*/
+		
+//		var i = 0
+//		for(;i<DANSES.length;i++){
+//			console.log(DANSES[i].anime.kind);
+//		}
+//		console.log(DANSES.length);
 		
 	};/*}}}*/
 	

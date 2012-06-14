@@ -42,6 +42,13 @@ var Animation = function(kind){
 				this.pos.x += this.speed * Math.cos(this.angle) * ace ;
 				this.pos.y += this.speed * Math.sin(this.angle) * ace ;
 			};
+			
+			var i = 0;
+			for(i=0;i<POSES.length;i++){
+				if( ( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ) < ((SCREENWIDTH / WORLD_ZOOM_RATE)*0.00001) ){
+					console.log("近い");
+				}
+			}
 	
 //			fall も　ちょっと考える
 //			if(this.lifeTime == 50)
@@ -67,16 +74,12 @@ var Animation = function(kind){
 			if( this.kind != ANIME_CLASS.DANCE && this.kind != ANIME_CLASS.JUMP){
 				if( ang < 4 )
 					this.icon_trans = ang * 0.1 / 4;
-	//				this.icon_trans = -0.1;
 				else if( ang < 8 )
 					this.icon_trans = ( ang - 8 ) * 0.1 /4;
-	//				this.icon_trans = 0.1;
 				else if( ang < 12)
 					this.icon_trans = ( ang - 8 ) * 0.1 /4;
-	//				this.icon_trans = 0.1;
 				else
 					this.icon_trans = (ang - 16 ) * 0.1 /4 ;
-	//				this.icon_trans = -0.1;
 			}else
 				this.icon_trans = 0;
 			

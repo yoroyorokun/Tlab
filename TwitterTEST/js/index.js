@@ -15,6 +15,8 @@ var MOUSE = new Position(0,0)
 
 var TIME_STANDARD = 0;
 
+var POSES = new Array;
+
 
 var ANIME_CLASS = {
 	"WALK"	: 0,

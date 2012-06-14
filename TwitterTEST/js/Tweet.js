@@ -94,7 +94,17 @@ var Tweet = function(date , index , firstcall ) {/*{{{*/
 	
 	
 	this.step = function(){
+	
+		/*
+		if( this.anime.kind == ANIME_CLASS.DANCE && this.anime.appearWaitTime <= 0 && this.anime.lifeTime > 0 ){
+			DANSES.push(this);
+		}
+		*/
+
 		this.anime.step();
+		
+		if( this.anime.appearWaitTime <= 0 && this.anime.lifeTime > 0 )
+			POSES.push(this.anime);
 
 //		this.pos.x += 0.001;
 //		if (this.pos.x > 1)
