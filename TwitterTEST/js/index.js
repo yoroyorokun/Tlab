@@ -5,7 +5,7 @@ audiojs.events.ready(function() {
 });
 
 var SCREENWIDTH = 800;
-var SCREENHEIGHT = 600;
+var SCREENHEIGHT = 400;
 
 var WORLD_ZOOM_RATE = 0.75;
 var WORLD_ZOOM_RATE_TO = 1.0;

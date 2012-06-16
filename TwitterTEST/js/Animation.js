@@ -2,7 +2,7 @@
 
 var Animation = function(kind){
 	
-	this.maxChangeTime = 1000;
+	this.maxChangeTime = 10;
 	//AnimationのPositionは0~SCREENWIDTH,0~SCREENHEIGHTにする。
 	//
 	//	┏━━━＞x
@@ -45,8 +45,20 @@ var Animation = function(kind){
 			
 			var i = 0;
 			for(i=0;i<POSES.length;i++){
-				if( ( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ) < ((SCREENWIDTH / WORLD_ZOOM_RATE)*0.00001) ){
-					console.log("近い");
+				if( Math.abs( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ) < ((SCREENWIDTH / WORLD_ZOOM_RATE)*0.01) ){
+					console.log(((SCREENWIDTH / WORLD_ZOOM_RATE)*0.01));
+					console.log(Math.abs( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ));
+					
+					this.angle = POSES[i].angle + Math.PI ;
+
+					if(this.angle > Math.PI*2)
+						this.angle -= Math.PI*2;
+					if( Math.floor( Math.random() * 2 ) == 0)
+						this.kind = ANIME_CLASS.RUN;
+					else
+						this.kind = ANIME_CLASS.WALK;
+					this.waitTime= Math.floor( Math.random() * this.maxChangeTime ) * 10 + 10;
+					break;
 				}
 			}
 	
@@ -92,7 +104,7 @@ var Animation = function(kind){
 			this.waitTime--;
 			
 			if(this.waitTime < 0 ){
-				this.waitTime= Math.floor( Math.random() * this.maxChangeTime );
+				this.waitTime= Math.floor( Math.random() * this.maxChangeTime ) * 10 + 10;
 				//this.kind = Math.floor( Math.random() * 3 );
 				this.kind = Math.floor( Math.random() * ANIME_IMAGES.length );
 //				if( this.kind != ANIME_CLASS.HAITAI )
