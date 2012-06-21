@@ -66,7 +66,7 @@ var World = function( canvas ) {/*{{{*/
 		var count = 0 
 		for(var i in this.tweetList){ 
 			if(this.tweetList[i].anime.appearWaitTime <= 0 && this.tweetList[i].anime.lifeTime >= 0)
-				count++; 
+				count++;
 		}
 		//console.log(count);
 		
@@ -85,8 +85,21 @@ var World = function( canvas ) {/*{{{*/
 		
 		this.ctx.save();
 		this.ctx.transform(WORLD_ZOOM_RATE,0,0,WORLD_ZOOM_RATE,0,0);
-		for(var i in this.tweetList){
-			world.tweetList[i].draw(world.ctx);
+
+		//var tweetListC = clone(world.tweetList);
+		var tweetListC = function(){};
+		tweetListC.prototype = this.tweetList;
+		
+		var maxY = (SCREENHEIGHT / WORLD_ZOOM_RATE);
+		for(var y = 0; y < 20 ;y++ ){
+			for( var i in this.tweetList ){
+				//console.log("cloneloopendter");
+				if( (this.tweetList[i].anime.pos.y < ((y+1)* maxY /20)) && (this.tweetList[i].anime.pos.y >= (y*maxY/20)) ){
+					//console.log("drawentered");
+					this.tweetList[i].draw(world.ctx);
+					//delete tweetListC[i];
+				}
+			}
 		}
 		this.ctx.restore();
 	};/*}}}*/

@@ -46,8 +46,8 @@ var Animation = function(kind){
 			var i = 0;
 			for(i=0;i<POSES.length;i++){
 				if( Math.abs( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ) < ((SCREENWIDTH / WORLD_ZOOM_RATE)*0.01) ){
-					console.log(((SCREENWIDTH / WORLD_ZOOM_RATE)*0.01));
-					console.log(Math.abs( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ));
+					//console.log(((SCREENWIDTH / WORLD_ZOOM_RATE)*0.01));
+					//console.log(Math.abs( (POSES[i].pos.x - this.pos.x) + (POSES[i].pos.y - this.pos.y) ));
 					
 					this.angle = POSES[i].angle + Math.PI ;
 
@@ -85,13 +85,11 @@ var Animation = function(kind){
 			var ang = this.angle/(Math.PI/8);
 			if( this.kind != ANIME_CLASS.DANCE && this.kind != ANIME_CLASS.JUMP){
 				if( ang < 4 )
-					this.icon_trans = ang * 0.1 ;
-				else if( ang < 8 )
-					this.icon_trans = ( ang - 8 ) * 0.1 ;
-				else if( ang < 12)
-					this.icon_trans = ( ang - 8 ) * 0.1 ;
+					this.icon_trans = (4 - ang) * 0.1 ;
+				else if( ang <= 8 )
+					this.icon_trans = (4  - ang ) * 0.1 ;
 				else
-					this.icon_trans = (ang - 16 ) * 0.1  ;
+					this.icon_trans = ( ang - 12 ) * 0.1 ;
 			}else
 				this.icon_trans = 0;
 			
@@ -110,6 +108,7 @@ var Animation = function(kind){
 //				if( this.kind != ANIME_CLASS.HAITAI )
 					//this.angle = Math.floor( Math.random() * 2) * Math.PI ;
 					this.angle = Math.floor( Math.random() * 16) * ( Math.PI / 8) ;	
+					//this.angle = 0;	
 //				else
 //					this.angle = Math.PI;
 				this.sound = new Audio(ANIME_SOUNDS[this.kind]);
@@ -164,11 +163,19 @@ var Animation = function(kind){
 		
 		var iconLength = 86 * WORLD_ZOOM_RATE;
 
-		p[0] = {x: this.icon_heni.x * WORLD_ZOOM_RATE -0.5 * iconLength , y: this.icon_heni.y * WORLD_ZOOM_RATE -0.5 * iconLength};
-		p[1] = {x: p[0].x + iconLength ,y:p[0].y + this.icon_trans * 20 };
-		p[2] = {x: p[0].x ,y:p[0].y + iconLength };
-		p[3] = {x: p[0].x + iconLength ,y:p[0].y + iconLength - this.icon_trans * 20 };
-		
+		if(this.icon_trans > 0){
+			p[0] = {x: this.icon_heni.x * WORLD_ZOOM_RATE -0.5 * iconLength , y: this.icon_heni.y * WORLD_ZOOM_RATE -0.5 * iconLength};
+			p[1] = {x: p[0].x + iconLength ,y:p[0].y + this.icon_trans * 15 };
+			p[2] = {x: p[0].x ,y:p[0].y + iconLength };
+			p[3] = {x: p[0].x + iconLength ,y:p[0].y + iconLength - this.icon_trans * 15 };
+		}else{
+			p[0] = {x: this.icon_heni.x * WORLD_ZOOM_RATE -0.5 * iconLength , y: this.icon_heni.y * WORLD_ZOOM_RATE -0.5 * iconLength};
+			p[1] = {x: p[0].x + iconLength ,y:p[0].y };
+			p[2] = {x: p[0].x ,y:p[0].y + iconLength };
+			p[3] = {x: p[0].x + iconLength ,y:p[0].y + iconLength };
+			p[0].y -= this.icon_trans * 15;
+			p[2].y += this.icon_trans * 15;
+		}
 		
 		/* 左上三角のクリッピング */
 		ctx.save();
@@ -217,10 +224,22 @@ var Animation = function(kind){
 		
 		// キャラクタ表示部分
 		var nekoLength = 200 * WORLD_ZOOM_RATE;
-		p[0] = {x: -0.5 * nekoLength , y: -0.5 * nekoLength};
-		p[1] = {x: p[0].x + nekoLength ,y:p[0].y + this.icon_trans * 20 };
-		p[2] = {x: p[0].x ,y:p[0].y + nekoLength };
-		p[3] = {x: p[0].x + nekoLength ,y:p[0].y + nekoLength - this.icon_trans * 20 };
+		if(this.icon_trans > 0){
+			p[0] = {x: -0.5 * nekoLength , y: -0.5 * nekoLength};
+			p[1] = {x: p[0].x + nekoLength ,y:p[0].y };
+			p[2] = {x: p[0].x ,y:p[0].y + nekoLength };
+			p[3] = {x: p[0].x + nekoLength ,y:p[0].y + nekoLength};
+			p[1].y -= this.icon_trans * 15;
+			p[3].y += this.icon_trans * 15;
+			//console.log(p[0].x);
+		}else{
+			p[0] = {x: -0.5 * nekoLength , y: -0.5 * nekoLength};
+			p[1] = {x: p[0].x + nekoLength ,y:p[0].y };
+			p[2] = {x: p[0].x ,y:p[0].y + nekoLength };
+			p[3] = {x: p[0].x + nekoLength ,y:p[0].y + nekoLength };
+			p[0].y -= this.icon_trans * 15;
+			p[2].y += this.icon_trans * 15;
+		}
 		
 		/* 左上三角のクリッピング */
 		ctx.save();
