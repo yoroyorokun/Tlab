@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  text: MyString
+  screenshot_id: 1
+  score: MyString
+
+two:
+  text: MyString
+  screenshot_id: 1
+  score: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rootpath: MyString
+  path: MyString
+  filename: MyString
+  filetype: MyString
+
+two:
+  rootpath: MyString
+  path: MyString
+  filename: MyString
+  filetype: MyString
