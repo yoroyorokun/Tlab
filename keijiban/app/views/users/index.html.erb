@@ -1,0 +1,14 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+<table class="form">
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= link_to user.name,user %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to "new","/users/new" %>

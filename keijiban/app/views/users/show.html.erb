@@ -1,0 +1,13 @@
+
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<%= @user.name %>
+<br>
+<%= @user.address %>
+<br>
+<% @user.categories.each do |c| %>
+	<%= c.name %>
+<% end %>
+<br>
+<%= link_to "削除", @user , :confirm => "本当に削除してよろしいですか？", :method => "delete" %>
