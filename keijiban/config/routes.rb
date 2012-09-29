@@ -1,17 +1,22 @@
 Keijiban::Application.routes.draw do
 
-#  get "groups/index"
+#  get "official_pages/index"
+#  get "official_pages/show"
+#  get "official_pages/edit"
+#  get "official_pages/new"
 
-#  get "groups/show"
-
-#  get "groups/edit"
-
-#  get "groups/new"
-
-#  get "users/index" #  get "users/show" #  get "users/edit" #  get "users/new"
+  resources :official_pages
+  resources :sessions, :only =>[:new ,:create, :destroy]
   
+  match '/login', :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
+
+#  get "welcome/index"
+
   resources :groups
   resources :users
+  
+  root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

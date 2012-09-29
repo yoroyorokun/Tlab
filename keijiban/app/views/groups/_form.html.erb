@@ -1,0 +1,51 @@
+<%= form_for @group do |f| %>
+  <% if @group.errors.any? %>
+    <div class="error_explanation">
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <% if msg != "Confirmingを受諾してください。" %>
+        <li><%= msg %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div>
+	<span class="col_6"><%= f.label :name, 'グループ名' %></span>
+	<span class="col_6"><%= f.text_field :name %></span>
+	<br />
+	<span class="col_6"><%= f.label :abstract, 'グループ概要' %></span>
+	<span class="col_6"><%= f.text_area :abstract %></span>
+	<br />
+	<fieldset>
+	<legend><%= f.label :join_ids, '参加ユーザ登録' %></legend>
+	<%@users.each_with_index do |user,i| %>
+		<% if (i%5) == 0%><span class="col_4"><% end %>  
+       	<%= check_box_tag "group[join_ids][]", user.id, @group.join_ids.include?(user.id) %><%= user.name %>
+       	<br>
+       	<% if (i%5) == 4%></span><% end %>
+    <% end %>
+   	    <input checked="checked" id="group_join_ids_" name="group[join_ids][]" type="hidden" value="" >
+    	</span>
+    </fieldset>
+    
+    <fieldset>
+	<legend><%= f.label :cool_ids, 'スゲー！！ユーザ登録' %></legend>
+	<%@users.each_with_index do |user,i| %>
+		<% if (i%5) == 0%><span class="col_4"><% end %>  
+    	<%= check_box_tag "group[cool_ids][]", user.id, @group.cool_ids.include?(user.id) %><%= user.name %>
+       	<br>
+       	<% if (i%5) == 4%></span><% end %>
+    <% end %>
+   	    <input checked="checked" id="group_cool_ids_" name="group[cool_ids][]" type="hidden" value="" >
+    	</span>
+    </fieldset>
+</div>
+  
+  <div class="actions right">
+    <%= f.submit :value => '作成' %>
+    <%#= hidden_field_tag :confirm , :value => "" %>
+  </div>
+
+<% end %>

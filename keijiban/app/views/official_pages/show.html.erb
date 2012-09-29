@@ -1,0 +1,27 @@
+
+<h1>オフィシャルページ詳細ページ</h1>
+
+<h3>オフィシャルページ名（ゲームタイトル）</h3>
+<%= @official_page.name %>
+<br>
+<h3>概要</h3>
+<%= @official_page.abstract %>
+<br>
+<h3>参加グループ</h3>
+<% @official_page.groups.each do |c| %>
+	<%= c.name %>
+<% end %>
+<br>
+<h3>スゲー！！を押した人</h3>
+<% @official_page.cools.each do |c| %>
+	<%= c.name %>
+<% end %>
+<br>
+
+<a href="/official_pages/<%= @official_page.id %>/edit">
+<button class="small" ><span class="icon medium gray" data-icon="7"></span>
+編集
+</button>
+</a>
+<br />
+<%= link_to "削除", @official_page , :confirm => "本当に削除してよろしいですか？", :method => "delete" %>

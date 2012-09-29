@@ -1,2 +1,27 @@
-<h1>Groups#show</h1>
-<p>Find me in app/views/groups/show.html.erb</p>
+
+<h1>Group詳細ページ</h1>
+
+<h3>Group名</h3>
+<%= @group.name %>
+<br>
+<h3>概要</h3>
+<%= @group.abstract %>
+<br>
+<h3>Groupメンバー</h3>
+<% @group.joins.each do |c| %>
+	<%= c.name %>
+<% end %>
+<br>
+<h3>スゲー！！を押した人</h3>
+<% @group.cools.each do |c| %>
+	<%= c.name %>
+<% end %>
+<br>
+
+<a href="/groups/<%= @group.id %>/edit">
+<button class="small" ><span class="icon medium gray" data-icon="7"></span>
+編集
+</button>
+</a>
+<br />
+<%= link_to "削除", @group , :confirm => "本当に削除してよろしいですか？", :method => "delete" %>

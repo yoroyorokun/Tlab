@@ -8,7 +8,33 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="wrap" class="clearfix">
+	<div class="col_12">
+		<% if false %>
+		<img class="style3" src="http://placekitten.com/920/200" width="920" height="200" />
+		<% end %>
+		<img class="style3" src="/assets/rails.png" width="920" height="200" />
+
+		<div class="col_9">
+			<%= yield %>
+		</div>
+		<div class="col_3">
+			<img class="style3" src="http://placedog.com/200/200" width="200" height="200" />
+			<div class="center visible">
+			<% if  signed_in? %>
+				<%= current_user.name %>
+				<br />
+				<%= link_to "ログアウト" , "/logout"%>
+			<% else %>
+				ゲスト
+				<br />
+				<%= link_to "ログイン" , "/login"%>
+			<% end %>
+			
+			</div>
+		</div>
+	</div>
+</div>
 
 </body>
 </html>

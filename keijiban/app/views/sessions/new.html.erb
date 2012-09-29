@@ -1,0 +1,18 @@
+<h1>ログイン</h1>
+<% unless flash[:error].nil? %>
+	<h4><%= flash[:error] %></h4>
+	<h4>メールアドレスとパスワードを確認してください</h4>
+<% end %>
+<%= form_for(:session, :url => sessions_path) do |f|%>
+<div>
+	<span class="col_6"><%= f.label :address, 'メールアドレス' %></span>
+	<span class="col_6"><%= f.text_field :address %></span>
+	<br />
+	<span class="col_6"><%= f.label :password, 'パスワード' %></span>
+	<span class="col_6"><%= f.password_field :password %></span>
+</div>
+
+  <div class="actions right">
+    <%= f.submit :value => 'ログイン' %>
+  </div>
+<% end %>

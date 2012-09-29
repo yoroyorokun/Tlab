@@ -1,5 +1,5 @@
 class OfficialPage < ActiveRecord::Base
-  attr_accessible :abstract, :title
+  attr_accessible :abstract, :name, :group_ids, :cool_ids
   
   has_many :groups
   

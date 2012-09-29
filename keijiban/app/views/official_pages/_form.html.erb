@@ -1,0 +1,50 @@
+<%= form_for @official_page do |f| %>
+  <% if @official_page.errors.any? %>
+    <div class="error_explanation">
+      <ul>
+      <% @official_page.errors.full_messages.each do |msg| %>
+        <% if msg != "Confirmingを受諾してください。" %>
+        <li><%= msg %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div>
+	<span class="col_6"><%= f.label :name, 'オフィシャルページ名（ゲームタイトル）' %></span>
+	<span class="col_6"><%= f.text_field :name %></span>
+	<br />
+	<span class="col_6"><%= f.label :abstract, 'オフィシャルページ概要' %></span>
+	<span class="col_6"><%= f.text_area :abstract %></span>
+	<br />
+	<fieldset>
+	<legend><%= f.label :join_ids, '参加グループ登録' %></legend>
+	<%@groups.each_with_index do |group,i| %>
+		<% if (i%5) == 0%><span class="col_4"><% end %>  
+       	<%= check_box_tag "official_page[group_ids][]", group.id, @official_page.group_ids.include?(group.id) %><%= group.name %>
+       	<br>
+       	<% if (i%5) == 4%></span><% end %>
+    <% end %>
+   	    <input checked="checked" id="official_page_group_ids_" name="official_page[group_ids][]" type="hidden" value="" >
+    	</span>
+    </fieldset>
+    
+    <fieldset>
+	<legend><%= f.label :cool_ids, 'スゲー！！ユーザ登録' %></legend>
+	<%@users.each_with_index do |user,i| %>
+		<% if (i%5) == 0%><span class="col_4"><% end %>  
+    	<%= check_box_tag "official_page[cool_ids][]", user.id, @official_page.cool_ids.include?(user.id) %><%= user.name %>
+       	<br>
+       	<% if (i%5) == 4%></span><% end %>
+    <% end %>
+   	    <input checked="checked" id="official_page_cool_ids_" name="official_page[cool_ids][]" type="hidden" value="" >
+    	</span>
+    </fieldset>
+</div>
+  
+  <div class="actions right">
+    <%= f.submit :value => '作成' %>
+  </div>
+
+<% end %>

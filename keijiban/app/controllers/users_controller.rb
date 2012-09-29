@@ -27,10 +27,16 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    unless @user.valid?(:user)
+      @categories = Category.all
+      render :action => :new, :flash => "mistaked create"
+      return
+    end
     if @user.save
       redirect_to :action => :index , :notice => "User created"
     else
-      render :action => :new, :alert => "mistaked create"
+      @categories = Category.all
+      render :action => :new, :flash => "mistaked create"
     end
   end
   

@@ -1,6 +1,9 @@
 
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>User詳細ページ</h1>
+
+<% unless flash[:notice].nil? %>
+	<h4><%= flash[:notice] %></h4>
+<% end %>
 
 <%= @user.name %>
 <br>
